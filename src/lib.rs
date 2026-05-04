@@ -1,10 +1,22 @@
+//#![allow(incomplete_features)]
+//#![feature(specialization)]
+
+// TODO figure out poub and re-exports
+
+// TODO move to lattice mod
+mod join;
+mod partial_join;
+
 mod collections;
-mod constructor;
+
+mod values;
+
+// TODO move to psbt mod
 mod global;
 mod input;
 mod output;
-mod partial_join;
 mod tx;
-mod values;
-#[cfg(test)]
-mod tests;
+//mod constructor;
+
+// #[cfg(test)]
+// mod tests;
