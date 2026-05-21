@@ -16,11 +16,16 @@
       );
 
       rustStable = pkgs.rust-bin.stable.latest.default;
+
+      craneLibNightly = (inputs.crane.mkLib pkgs).overrideToolchain rustNightly;
+      craneLibStable = (inputs.crane.mkLib pkgs).overrideToolchain rustStable;
     in
     {
       _module.args = {
         inherit
           pkgs
+          craneLibNightly
+          craneLibStable
           rustNightly
           rustStable
           ;
